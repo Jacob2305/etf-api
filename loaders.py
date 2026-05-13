@@ -25,11 +25,11 @@ def _clean_nan(df: pd.DataFrame) -> pd.DataFrame:
 # Reads from environment or uses Docker defaults
 import os
 
-DB_HOST = os.getenv("MYSQLHOST", "localhost")
-DB_PORT = os.getenv("MYSQLPORT", "3306")
-DB_USER = os.getenv("MYSQLUSER", "etf_user")
-DB_PASS = os.getenv("MYSQLPASSWORD", "group6700")
-DB_NAME = os.getenv("MYSQLDATABASE", "etf_db")
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = os.getenv("DB_PORT", "3306")
+DB_USER = os.getenv("DB_USER", "etf_user")
+DB_PASS = os.getenv("DB_PASS", "group6700")
+DB_NAME = os.getenv("DB_NAME", "etf_db")
 
 def get_engine():
     url = f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
