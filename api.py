@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from sqlalchemy import text
-from src.db.loaders import get_engine
+from loaders import get_engine
 
 app = Flask(__name__)
 CORS(app)  # Allow React frontend to call from any origin
